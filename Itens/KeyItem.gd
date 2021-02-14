@@ -1,9 +1,6 @@
-extends Area2D
+extends Sprite
 
-
-func _ready():
-	pass # Replace with function body.
-
-func _process(delta):
-	if overlaps_body(get_parent().get_node("Player")) || overlaps_body(get_parent().get_node("PlayerClone")):
-		queue_free()
+func _on_Hitbox_body_entered(body):
+	print('got key')
+	get_node("../").got_key = true
+	queue_free()
