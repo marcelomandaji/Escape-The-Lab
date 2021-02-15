@@ -3,6 +3,7 @@ extends Node2D
 var got_key = false
 var camera_is_on_player = true
 var finishing = false
+var onoff = false
 
 func cycle_camera():
 	
@@ -18,7 +19,7 @@ func cycle_camera():
 		get_node("PlayerClone").get_node("Camera2D").position.x = 0
 		get_node("PlayerClone").get_node("Camera2D").position.y = 0
 		
-	else:
+	elif get_node("PlayerClone") != null:
 		
 		camera_is_on_player = true
 		
