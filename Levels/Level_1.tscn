@@ -53,6 +53,7 @@ position = Vector2( 40, 96 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 148, 84 )
+frame = 4
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 148, 144 )

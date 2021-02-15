@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menus/TitleScreen.gd" type="Script" id=1]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.133333, 0.184314, 0.25098, 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 120.0
+margin_top = 104.0
+margin_right = 202.0
+margin_bottom = 124.0
+text = "start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 72.0
+margin_right = 210.0
+margin_bottom = 86.0
+text = "Escape the LAB"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
