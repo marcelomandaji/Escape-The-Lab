@@ -53,14 +53,12 @@ position = Vector2( 40, 96 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 148, 84 )
-frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 148, 144 )
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 265.788, 131.11 )
-frame = 2
 
 [node name="Light2D3" type="Light2D" parent="."]
 visible = false
