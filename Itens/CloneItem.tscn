@@ -1,17 +1,43 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/pot.png" type="Texture" id=1]
+[ext_resource path="res://Assets/pot_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Itens/CloneItem.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
 
-[node name="CloneItem" type="Sprite"]
-texture = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 4, 6 )
+
+[node name="CloneItem" type="AnimatedSprite"]
+frames = SubResource( 5 )
+frame = 1
+playing = true
 script = ExtResource( 2 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

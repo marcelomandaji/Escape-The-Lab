@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 func _on_Hitbox_body_entered(body):
 	
