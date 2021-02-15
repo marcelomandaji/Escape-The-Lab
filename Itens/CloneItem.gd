@@ -7,7 +7,7 @@ func _on_Hitbox_body_entered(body):
 		var cloneScene = load("res://Player/Player.tscn")
 		var clone = cloneScene.instance()
 		clone.set_name("PlayerClone")
-		get_node("../../").add_child(clone)
+		get_node("../").add_child(clone)
 		clone.position = Vector2(position.x+10, position.y)
 		
 		queue_free()

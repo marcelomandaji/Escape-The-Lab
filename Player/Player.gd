@@ -39,16 +39,19 @@ func _ready():
 		$Camera2D.current = true
 
 func _physics_process(delta):
-	get_input()
-	velocity.y += gravity * delta
-	motion_previous = velocity
-	velocity = move_and_slide(velocity, FLOOR)
+	if !get_node("../").finishing: 
+		get_input()
+		velocity.y += gravity * delta
+		motion_previous = velocity
+		velocity = move_and_slide(velocity, FLOOR)
 
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed
 			
 	
+	if Input.is_action_just_pressed("camera"):
+		next_camera()
 
 	"""
 	-- New Code from this Point --
@@ -89,3 +92,10 @@ func _physics_process(delta):
 
 	$AnimatedSprite.scale.x = lerp($AnimatedSprite.scale.x, 1, 1 - pow(0.01, delta))
 	$AnimatedSprite.scale.y = lerp($AnimatedSprite.scale.y, 1, 1 - pow(0.01, delta))
+
+func next_camera():
+	if self.name == "Player":
+		get_node("../").cycle_camera()
+
+func set_camera():
+	$Camera2D.current = true
