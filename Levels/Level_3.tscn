@@ -66,8 +66,12 @@ tile_data = PoolIntArray( -458747, 1, 0, -458746, 1, 0, -458745, 1, 0, -458744, 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 344, -80 )
 
+[node name="RedSwitch2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 112, -72 )
+
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
-position = Vector2( 88, -56 )
+position = Vector2( 120, -80 )
+frame = 2
 
 [node name="OnOffDoor" parent="." instance=ExtResource( 9 )]
 position = Vector2( 128, 160 )
@@ -77,7 +81,13 @@ position = Vector2( 136, 184 )
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 176 )
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 104, 192 )
+
+[node name="OnOffDoor2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 192, 16 )
+rotation = 1.5708
+[connection signal="RedSwitch" from="RedSwitch2" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor" method="_on_RedSwitch_RedSwitch"]

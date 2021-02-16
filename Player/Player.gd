@@ -44,7 +44,11 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		motion_previous = velocity
 		velocity = move_and_slide(velocity, FLOOR)
-
+	
+	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().change_scene("res://Levels/"+ get_tree().current_scene.name +".tscn")
+	
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed

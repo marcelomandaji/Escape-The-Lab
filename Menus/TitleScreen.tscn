@@ -37,12 +37,13 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 104.0
-margin_top = 64.0
+margin_top = 60.0
 margin_right = 221.0
-margin_bottom = 112.0
+margin_bottom = 125.0
 text = "Arrows - move
 Space - jump
-C - change camera"
+C - change camera
+R - restart level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
