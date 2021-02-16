@@ -1,27 +1,37 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Itens/OnOffDoor.gd" type="Script" id=1]
+[ext_resource path="res://Assets/onOffDoorOpen.png" type="Texture" id=2]
+[ext_resource path="res://Assets/onOffDoorClosed.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "Open",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Closed",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4, 16 )
 
 [node name="OnOffDoor" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "Open"
+offset = Vector2( 4, 16 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 8.0
-margin_bottom = 32.0
-color = Color( 0.133333, 0.105882, 0.129412, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 4, 16 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 disabled = true

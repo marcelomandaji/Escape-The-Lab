@@ -1,28 +1,42 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Itens/BlueSwitch.gd" type="Script" id=1]
+[ext_resource path="res://Assets/buttons.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 8, 0, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": false,
+"name": "Apertado",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 4, 4 )
 
 [node name="BlueSwitch" type="AnimatedSprite"]
 position = Vector2( 88, 152 )
+frames = SubResource( 3 )
+animation = "Idle"
+offset = Vector2( 4, 4 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 4, 4 )
-shape = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 8.0
-margin_bottom = 8.0
-color = Color( 0.0941176, 0.137255, 0.819608, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+shape = SubResource( 4 )
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

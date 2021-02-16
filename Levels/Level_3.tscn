@@ -68,17 +68,16 @@ position = Vector2( 344, -80 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 88, -56 )
-frame = 2
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 104, 192 )
-
-[node name="CloneItem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 184 )
 
 [node name="OnOffDoor" parent="." instance=ExtResource( 9 )]
 position = Vector2( 128, 160 )
 
 [node name="RedSwitch" parent="." instance=ExtResource( 10 )]
-position = Vector2( 144, 184 )
+position = Vector2( 136, 184 )
+
+[node name="CloneItem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128, 176 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 192 )
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor" method="_on_RedSwitch_RedSwitch"]
