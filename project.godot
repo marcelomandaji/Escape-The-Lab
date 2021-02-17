@@ -19,6 +19,10 @@ config/name="Escape The Lab"
 run/main_scene="res://Menus/TitleScreen.tscn"
 config/icon="res://Assets/player.png"
 
+[autoload]
+
+MusicController="*res://MusicController.tscn"
+
 [display]
 
 window/size/width=320

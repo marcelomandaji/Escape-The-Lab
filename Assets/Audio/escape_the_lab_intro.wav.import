@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/escape_the_lab_intro.wav-123faeb543ebfbb8d45a65e0ac32bd62.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/escape_the_lab_intro.wav"
+dest_files=[ "res://.import/escape_the_lab_intro.wav-123faeb543ebfbb8d45a65e0ac32bd62.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

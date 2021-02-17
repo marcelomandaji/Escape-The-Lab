@@ -1,6 +1,7 @@
 extends Control
 
-
+func _ready():
+	MusicController.play_intro()
 
 func _on_Button_pressed():
 	pass
@@ -9,10 +10,14 @@ func _on_Button_pressed():
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
-			get_tree().change_scene("res://Levels/Level_0.tscn")
+			go_play()
 	if event is InputEventJoypadButton:
 		if event.pressed:
-			get_tree().change_scene("res://Levels/Level_0.tscn")
+			go_play()
 	if event is InputEventMouseButton:
 		if event.pressed:
-			get_tree().change_scene("res://Levels/Level_0.tscn")
+			go_play()
+
+func go_play():
+	MusicController.play_theme()
+	get_tree().change_scene("res://Levels/Level_0.tscn")
