@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Itens/CloneItem.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Levels/Level.gd" type="Script" id=5]
 [ext_resource path="res://Assets/tileset16.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/tileset8.tres" type="TileSet" id=7]
+[ext_resource path="res://Assets/pc.png" type="Texture" id=8]
+[ext_resource path="res://Assets/cabinet.png" type="Texture" id=9]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 5 )
@@ -52,11 +54,19 @@ position = Vector2( 40, 96 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 152, 96 )
-frame = 2
+frame = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 302, 148 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 283, 152 )
+texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 148, 144 )
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 264, 128 )
-frame = 0
+frame = 3

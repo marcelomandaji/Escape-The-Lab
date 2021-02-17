@@ -55,7 +55,7 @@ position = Vector2( 384, 96 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 104 )
-frame = 4
+frame = 2
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )

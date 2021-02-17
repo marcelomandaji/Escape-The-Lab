@@ -154,9 +154,9 @@ position = Vector2( 160, 90 )
 frames = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 118.0
+margin_left = 115.0
 margin_top = 33.0
-margin_right = 201.0
+margin_right = 198.0
 margin_bottom = 62.0
 custom_fonts/font = SubResource( 9 )
 text = "...rule the earth!"
