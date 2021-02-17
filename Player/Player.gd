@@ -82,12 +82,15 @@ func _physics_process(delta):
 	previous motion
 	"""
 
-	if not hit_the_ground and is_on_floor():
+	if not hit_the_ground and is_on_floor() and !is_on_wall():
 		hit_the_ground = true
 		$AnimatedSprite.scale.x = range_lerp(abs(motion_previous.y), 0, abs(1700), 1.8, 2.0)
 		$AnimatedSprite.scale.y = range_lerp(abs(motion_previous.y), 0, abs(1700), 0.6, 0.5)
-
-
+	
+	#if is_on_floor() and is_on_wall():
+		#$AnimatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.35, 1)
+		#$AnimatedSprite.scale.x = range_lerp(abs(velocity.y), 0, abs(jump_speed), 0.65, 1)
+		
 	"""
 	lerp function eases sprite scale to default position
 	See article on using delta with lerp:
