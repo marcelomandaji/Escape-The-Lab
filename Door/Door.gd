@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 var body_entered = null
-var max_levels = 4
+var max_levels = 5
 
 func _ready():
 	pass
@@ -24,4 +24,4 @@ func _on_AnimatedSprite_animation_finished():
 		if (int(get_tree().current_scene.name) + 1) <= max_levels:
 			get_tree().change_scene("res://Levels/Level_" + str(int(get_tree().current_scene.name) + 1) + ".tscn")
 		else:
-			get_tree().change_scene("res://Levels/Level_0.tscn")
+			get_tree().change_scene("res://Final.tscn")

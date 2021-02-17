@@ -71,6 +71,7 @@ position = Vector2( 888, 80 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 672, 80 )
+frame = 4
 
 [node name="Arrow" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
@@ -137,6 +138,7 @@ __meta__ = {
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 552, 80 )
+frame = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 112 )
