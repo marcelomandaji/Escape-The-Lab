@@ -51,6 +51,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
+			MusicController.sfx_jump()
 			velocity.y = jump_speed
 			
 	
@@ -84,6 +85,7 @@ func _physics_process(delta):
 
 	if not hit_the_ground and is_on_floor() and !is_on_wall():
 		hit_the_ground = true
+		#MusicController.sfx_fall()
 		$AnimatedSprite.scale.x = range_lerp(abs(motion_previous.y), 0, abs(1700), 1.8, 2.0)
 		$AnimatedSprite.scale.y = range_lerp(abs(motion_previous.y), 0, abs(1700), 0.6, 0.5)
 	

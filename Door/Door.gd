@@ -24,4 +24,5 @@ func _on_AnimatedSprite_animation_finished():
 		if (int(get_tree().current_scene.name) + 1) <= max_levels:
 			get_tree().change_scene("res://Levels/Level_" + str(int(get_tree().current_scene.name) + 1) + ".tscn")
 		else:
+			MusicController.play_final()
 			get_tree().change_scene("res://Final.tscn")

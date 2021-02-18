@@ -116,12 +116,11 @@ __meta__ = {
 [node name="intro" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 90 )
 frames = SubResource( 20 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="anykey" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 144 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

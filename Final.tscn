@@ -86,67 +86,68 @@ frames = SubResource( 2 )
 position = Vector2( 162.342, 71.5503 )
 scale = Vector2( 0.469467, 0.469467 )
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ET2" type="AnimatedSprite" parent="."]
 position = Vector2( 140.14, 79.0297 )
 scale = Vector2( 0.409414, 0.409414 )
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ET3" type="AnimatedSprite" parent="."]
 position = Vector2( 146.44, 80.2896 )
 scale = Vector2( 0.507847, 0.507847 )
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ET4" type="AnimatedSprite" parent="."]
 position = Vector2( 137.227, 93.125 )
 scale = Vector2( 0.360201, 0.360201 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="ET5" type="AnimatedSprite" parent="."]
 position = Vector2( 142.818, 87.6916 )
 scale = Vector2( 0.507847, 0.507847 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="ET6" type="AnimatedSprite" parent="."]
 position = Vector2( 173.213, 98.8734 )
 scale = Vector2( 0.409416, 0.409416 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ET7" type="AnimatedSprite" parent="."]
 position = Vector2( 172.583, 91.1564 )
 scale = Vector2( 0.488161, 0.488161 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ET8" type="AnimatedSprite" parent="."]
 position = Vector2( 153.445, 99.5793 )
 scale = Vector2( 0.439302, 0.439302 )
 frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="ET9" type="AnimatedSprite" parent="."]
 position = Vector2( 177.859, 91.8651 )
 scale = Vector2( 0.281455, 0.281455 )
 frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="ET10" type="AnimatedSprite" parent="."]
 position = Vector2( 164.998, 79.1556 )
 scale = Vector2( 0.281455, 0.281455 )
 frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="Clouds" type="AnimatedSprite" parent="."]

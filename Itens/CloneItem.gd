@@ -4,6 +4,8 @@ func _on_Hitbox_body_entered(body):
 	
 	if body.is_in_group("Player"):
 		
+		MusicController.sfx_clone()
+		
 		var cloneScene = load("res://Player/Player.tscn")
 		var clone = cloneScene.instance()
 		clone.set_name("PlayerClone")
