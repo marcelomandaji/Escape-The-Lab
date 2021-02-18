@@ -115,9 +115,11 @@ __meta__ = {
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 826, 98 )
+frame = 2
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 297.825, 90.2092 )
+frame = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
@@ -134,11 +136,9 @@ position = Vector2( 552, 104 )
 
 [node name="OnOffDoor" parent="." instance=ExtResource( 13 )]
 position = Vector2( 704, 80 )
-scale = Vector2( 1, 1 )
 
 [node name="OnOffDoor2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 512, 80 )
-scale = Vector2( 1, 1 )
 
 [node name="bg_green" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -166,9 +166,9 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 112 )
-[connection signal="BlueSwitch" from="BlueSwitch" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
-[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor" method="_on_RedSwitch_RedSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]

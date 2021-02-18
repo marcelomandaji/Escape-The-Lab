@@ -16,7 +16,6 @@
 script = ExtResource( 5 )
 
 [node name="bg_black" type="ColorRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -224.0
@@ -70,11 +69,10 @@ position = Vector2( 360, 64 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( -32, 136 )
-frame = 1
+frame = 0
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, 184 )
-frame = 2
 
 [node name="OnOffDoor" parent="." instance=ExtResource( 10 )]
 position = Vector2( 88, 160 )
@@ -106,7 +104,7 @@ texture = ExtResource( 11 )
 [connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch2" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor" method="_on_RedSwitch_RedSwitch"]
-[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch2" method="_on_RedSwitch_RedSwitch"]
