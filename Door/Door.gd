@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 var body_entered = null
-var max_levels = 5
+var max_levels = 6
 
 func _ready():
 	pass
