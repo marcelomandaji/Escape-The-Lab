@@ -134,11 +134,11 @@ __meta__ = {
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 816, 80 )
-frame = 0
+frame = 1
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 552, 80 )
-frame = 3
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 112 )

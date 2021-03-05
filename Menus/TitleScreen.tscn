@@ -104,19 +104,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_right = 320.0
-margin_bottom = 180.0
-text = "start"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="intro" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 90 )
 frames = SubResource( 20 )
-frame = 5
+frame = 9
 playing = true
 
 [node name="anykey" type="AnimatedSprite" parent="."]
@@ -124,4 +115,3 @@ position = Vector2( 160, 144 )
 frames = SubResource( 21 )
 frame = 1
 playing = true
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

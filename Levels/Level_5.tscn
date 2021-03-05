@@ -69,10 +69,11 @@ position = Vector2( 360, 64 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( -32, 136 )
-frame = 0
+frame = 4
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, 184 )
+frame = 0
 
 [node name="OnOffDoor" parent="." instance=ExtResource( 10 )]
 position = Vector2( 88, 160 )
@@ -97,14 +98,14 @@ position = Vector2( 152, 192 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 288, 104 )
 texture = ExtResource( 11 )
-[connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor" method="_on_BlueSwitch_BlueSwitch"]
-[connection signal="BlueSwitch" from="BlueSwitch" to="BlueSwitch2" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
-[connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch" to="BlueSwitch2" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="BlueSwitch" from="BlueSwitch2" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
-[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
-[connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor" method="_on_RedSwitch_RedSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch2" method="_on_RedSwitch_RedSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]

@@ -77,10 +77,11 @@ position = Vector2( 481, 144 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 308, 308 )
-frame = 2
+frame = 4
 
 [node name="CloneItem" parent="." instance=ExtResource( 1 )]
 position = Vector2( 248, 108 )
+frame = 2
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 112, 308 )

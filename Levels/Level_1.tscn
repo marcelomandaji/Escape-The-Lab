@@ -54,6 +54,7 @@ position = Vector2( 40, 96 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 152, 96 )
+frame = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 302, 148 )
@@ -64,8 +65,8 @@ position = Vector2( 283, 152 )
 texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 148, 144 )
+position = Vector2( 160, 160 )
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 264, 128 )
-frame = 0
+frame = 2

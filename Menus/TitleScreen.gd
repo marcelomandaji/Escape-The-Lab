@@ -3,10 +3,6 @@ extends Control
 func _ready():
 	MusicController.play_intro()
 
-func _on_Button_pressed():
-	pass
-	#get_tree().change_scene("res://Levels/Level_1.tscn")
-	
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:

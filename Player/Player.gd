@@ -11,52 +11,78 @@ var motion_previous = Vector2.ZERO
 
 var got_key = false
 var hit_the_ground = false
+var is_jumping = false
 
 const FLOOR = Vector2(0,-1)
+
+onready var animatedSprite = $AnimatedSprite
+onready var camera = $Camera2D
+onready var coyoteTimer = $CoyoteTimer
+
 func get_input():
+	
 	var dir = 0
+	
 	if Input.is_action_pressed("walk_right"):
-		
 		dir += 1
-		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("walk")
-		
+		animatedSprite.play("walk")
+	
 	if Input.is_action_pressed("walk_left"):
-		
 		dir -= 1
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("walk")
-		
+		animatedSprite.play("walk")
+	
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
+		animatedSprite.flip_h = dir < 0
+	
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
 		if is_on_floor():
-			$AnimatedSprite.play("idle")
+			animatedSprite.play("idle")
+			
 
+func _input(event):
+	if event.is_action_pressed("jump"):
+		if is_on_floor() || !coyoteTimer.is_stopped():
+			coyoteTimer.stop()
+			jump()
+			
+	if event.is_action_pressed("camera"):
+		next_camera()
+		
+	if event.is_action_pressed("restart"):
+		get_tree().change_scene("res://Levels/"+ get_tree().current_scene.name +".tscn")
+
+func jump():
+		velocity.y = jump_speed
+		is_jumping = true
+		MusicController.sfx_jump()
+
+func move(_delta):
+	motion_previous = velocity
+	var was_on_floor = is_on_floor()
+	velocity = move_and_slide(velocity, FLOOR)
+	if was_on_floor && !is_on_floor() && !is_jumping:
+		coyoteTimer.start()
+		velocity.y = 0
+
+func gravity(delta):
+	if coyoteTimer.is_stopped():
+		velocity.y += gravity * delta
+		if is_jumping && velocity.y >= 0:
+			is_jumping = false
+	
 func _ready():
 	if self.name == "Player":
-		$Camera2D.current = true
+		camera.current = true
 
 func _physics_process(delta):
 	if !get_node("../").finishing: 
 		get_input()
-		velocity.y += gravity * delta
-		motion_previous = velocity
-		velocity = move_and_slide(velocity, FLOOR)
+		gravity(delta)
+		move(delta)
 	
 	
-	if Input.is_action_just_pressed("restart"):
-		get_tree().change_scene("res://Levels/"+ get_tree().current_scene.name +".tscn")
-	
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
-			MusicController.sfx_jump()
-			velocity.y = jump_speed
-			
-	
-	if Input.is_action_just_pressed("camera"):
-		next_camera()
 
 	"""
 	-- New Code from this Point --
@@ -67,15 +93,16 @@ func _physics_process(delta):
 	the larger the x squash
 	"""
 
-	if not is_on_floor():
+	if !is_on_floor() && coyoteTimer.is_stopped():
 		if velocity.y < 0:
-			$AnimatedSprite.play("jump")
+			animatedSprite.play("jump")
 		else:
-			$AnimatedSprite.play("fall") 
+			
+			animatedSprite.play("fall") 
 		hit_the_ground = false
 		if not is_on_wall():
-			$AnimatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 0.75, 1.75)
-			$AnimatedSprite.scale.x = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.25, 0.75)
+			animatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 0.75, 1.75)
+			animatedSprite.scale.x = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.25, 0.75)
 
 	"""
 	If there's a floor collision,
@@ -86,8 +113,8 @@ func _physics_process(delta):
 	if not hit_the_ground and is_on_floor() and !is_on_wall():
 		hit_the_ground = true
 		#MusicController.sfx_fall()
-		$AnimatedSprite.scale.x = range_lerp(abs(motion_previous.y), 0, abs(1700), 1.8, 2.0)
-		$AnimatedSprite.scale.y = range_lerp(abs(motion_previous.y), 0, abs(1700), 0.6, 0.5)
+		animatedSprite.scale.x = range_lerp(abs(motion_previous.y), 0, abs(1700), 1.8, 2.0)
+		animatedSprite.scale.y = range_lerp(abs(motion_previous.y), 0, abs(1700), 0.6, 0.5)
 	
 	#if is_on_floor() and is_on_wall():
 		#$AnimatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.35, 1)
@@ -99,12 +126,12 @@ func _physics_process(delta):
 		https://www.construct.net/en/blogs/ashleys-blog-2/using-lerp-delta-time-924
 	"""
 
-	$AnimatedSprite.scale.x = lerp($AnimatedSprite.scale.x, 1, 1 - pow(0.01, delta))
-	$AnimatedSprite.scale.y = lerp($AnimatedSprite.scale.y, 1, 1 - pow(0.01, delta))
+	animatedSprite.scale.x = lerp(animatedSprite.scale.x, 1, 1 - pow(0.01, delta))
+	animatedSprite.scale.y = lerp(animatedSprite.scale.y, 1, 1 - pow(0.01, delta))
 
 func next_camera():
 	if self.name == "Player":
 		get_node("../").cycle_camera()
 
 func set_camera():
-	$Camera2D.current = true
+	camera.current = true
