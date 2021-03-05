@@ -18,6 +18,7 @@ const FLOOR = Vector2(0,-1)
 onready var animatedSprite = $AnimatedSprite
 onready var camera = $Camera2D
 onready var coyoteTimer = $CoyoteTimer
+onready var jumpBuffer = $JumpBuffer
 
 func get_input():
 	
@@ -46,6 +47,8 @@ func _input(event):
 		if is_on_floor() || !coyoteTimer.is_stopped():
 			coyoteTimer.stop()
 			jump()
+		else:
+			jumpBuffer.start()
 			
 	if event.is_action_pressed("camera"):
 		next_camera()
@@ -65,6 +68,9 @@ func move(_delta):
 	if was_on_floor && !is_on_floor() && !is_jumping:
 		coyoteTimer.start()
 		velocity.y = 0
+	if is_on_floor() && !jumpBuffer.is_stopped():
+		jumpBuffer.stop()
+		jump()
 
 func gravity(delta):
 	if coyoteTimer.is_stopped():
