@@ -1,8 +1,12 @@
 extends KinematicBody2D
 
-export (int) var speed = 50
-export (int) var jump_speed = -280
-export (int) var gravity = 1000
+const FLOOR = Vector2(0,-1)
+const GRAVITY_INIT = 1000
+const GRAVITY_DELTA = 15
+
+export (int) var speed = 60
+export (int) var jump_speed = -272
+export (int) var gravity = GRAVITY_INIT
 export (float, 0, 1.0) var friction = 0.3
 export (float, 0, 1.0) var acceleration = 0.25
 
@@ -13,7 +17,6 @@ var got_key = false
 var hit_the_ground = false
 var is_jumping = false
 
-const FLOOR = Vector2(0,-1)
 
 onready var animatedSprite = $AnimatedSprite
 onready var camera = $Camera2D
@@ -61,10 +64,28 @@ func jump():
 		is_jumping = true
 		MusicController.sfx_jump()
 
+
 func move(_delta):
+	
+	var previous_x = self.position.x
+	
 	motion_previous = velocity
 	var was_on_floor = is_on_floor()
 	velocity = move_and_slide(velocity, FLOOR)
+	
+	if velocity.x < 0:
+		camera.offset_h = -1
+	elif velocity.x > 0:
+		camera.offset_h = 1
+		
+	#if previous_x < self.position.x:
+	#	if  !is_on_wall():
+	#		camera.offset_h = 1
+	#elif previous_x > self.position.x:
+	#	if  !is_on_wall():
+	#		camera.offset_h = -1
+		
+	
 	if was_on_floor && !is_on_floor() && !is_jumping:
 		coyoteTimer.start()
 		velocity.y = 0
@@ -72,12 +93,16 @@ func move(_delta):
 		jumpBuffer.stop()
 		jump()
 
-func gravity(delta):
+func apply_gravity(delta):
 	if coyoteTimer.is_stopped():
 		velocity.y += gravity * delta
 		if is_jumping && velocity.y >= 0:
 			is_jumping = false
-	
+		if is_jumping:
+			gravity -= GRAVITY_DELTA
+		else:
+			gravity = GRAVITY_INIT
+			
 func _ready():
 	if self.name == "Player":
 		camera.current = true
@@ -85,7 +110,7 @@ func _ready():
 func _physics_process(delta):
 	if !get_node("../").finishing: 
 		get_input()
-		gravity(delta)
+		apply_gravity(delta)
 		move(delta)
 	
 	
