@@ -132,8 +132,8 @@ func _physics_process(delta):
 			animatedSprite.play("fall") 
 		hit_the_ground = false
 		if not is_on_wall():
-			animatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 0.75, 1.75)
-			animatedSprite.scale.x = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.25, 0.75)
+			animatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 0.85, 1.55)
+			animatedSprite.scale.x = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.15, 0.95)
 
 	"""
 	If there's a floor collision,
@@ -144,8 +144,8 @@ func _physics_process(delta):
 	if not hit_the_ground and is_on_floor() and !is_on_wall():
 		hit_the_ground = true
 		#MusicController.sfx_fall()
-		animatedSprite.scale.x = range_lerp(abs(motion_previous.y), 0, abs(1700), 1.8, 2.0)
-		animatedSprite.scale.y = range_lerp(abs(motion_previous.y), 0, abs(1700), 0.6, 0.5)
+		animatedSprite.scale.x = range_lerp(abs(motion_previous.y), 0, abs(1700), 1.4, 1.6)
+		animatedSprite.scale.y = range_lerp(abs(motion_previous.y), 0, abs(1700), 0.8, 0.7)
 	
 	#if is_on_floor() and is_on_wall():
 		#$AnimatedSprite.scale.y = range_lerp(abs(velocity.y), 0, abs(jump_speed), 1.35, 1)

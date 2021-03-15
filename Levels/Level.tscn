@@ -107,9 +107,11 @@ shape = SubResource( 1 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 156.176, 86.0972 )
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 210, 132 )
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
 position = Vector2( 265.788, 131.11 )
+frame = 2
