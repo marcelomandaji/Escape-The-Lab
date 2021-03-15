@@ -38,10 +38,12 @@ extents = Vector2( 4, 4 )
 frames = SubResource( 6 )
 frame = 3
 playing = true
+offset = Vector2( 8, 0 )
 script = ExtResource( 1 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 7.8834, -0.315338 )
 shape = SubResource( 7 )
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

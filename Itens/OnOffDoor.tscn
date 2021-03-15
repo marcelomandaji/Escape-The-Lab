@@ -23,13 +23,14 @@ extents = Vector2( 4, 16 )
 [node name="OnOffDoor" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "Open"
-offset = Vector2( 4, 16 )
+offset = Vector2( 8, 16 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 4, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 4, 16 )

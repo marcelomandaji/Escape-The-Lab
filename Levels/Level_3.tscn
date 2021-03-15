@@ -13,6 +13,7 @@
 script = ExtResource( 5 )
 
 [node name="bg_black" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -220.0
@@ -25,6 +26,7 @@ __meta__ = {
 }
 
 [node name="bg_green" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 56.0
@@ -36,6 +38,7 @@ __meta__ = {
 }
 
 [node name="bg_green2" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 326.0
@@ -48,6 +51,7 @@ __meta__ = {
 }
 
 [node name="bg_black2" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 32.0
@@ -60,6 +64,7 @@ __meta__ = {
 }
 
 [node name="TileMap8" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource( 9 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
@@ -77,11 +82,11 @@ position = Vector2( 481, 144 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
 position = Vector2( 308, 308 )
-frame = 4
+frame = 2
 
 [node name="CloneItem" parent="." instance=ExtResource( 1 )]
 position = Vector2( 248, 108 )
-frame = 2
+frame = 0
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 112, 308 )
