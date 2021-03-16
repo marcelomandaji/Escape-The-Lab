@@ -107,7 +107,6 @@ __meta__ = {
 [node name="intro" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 90 )
 frames = SubResource( 20 )
-frame = 9
 playing = true
 
 [node name="anykey" type="AnimatedSprite" parent="."]

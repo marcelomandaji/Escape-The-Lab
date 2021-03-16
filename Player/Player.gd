@@ -57,7 +57,7 @@ func _input(event):
 		next_camera()
 		
 	if event.is_action_pressed("restart"):
-		get_tree().change_scene("res://Levels/"+ get_tree().current_scene.name +".tscn")
+		var _scene = get_tree().change_scene("res://Levels/"+ get_tree().current_scene.name +".tscn")
 
 func jump():
 		velocity.y = jump_speed
@@ -67,7 +67,7 @@ func jump():
 
 func move(_delta):
 	
-	var previous_x = self.position.x
+	#var previous_x = self.position.x
 	
 	motion_previous = velocity
 	var was_on_floor = is_on_floor()

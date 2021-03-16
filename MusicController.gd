@@ -9,34 +9,41 @@ var jump_sfx = load("res://Assets/Audio/jump.wav")
 var clone_sfx = load("res://Assets/Audio/clone.wav")
 var fall_sfx = load("res://Assets/Audio/jump_fall.wav")
 
+func stopMusic():
+	$Music.stop()
+	
 func _ready():
 	$Music.set_volume_db(-8)
 	$Sfx.set_volume_db(-2)
 	
 func play_intro():
 	$Music.stream = intro_music
-	#$Music.play()
+	$Music.play()
 
 func play_theme():
 	$Music.stream = theme_music
-	#$Music.play()
+	$Music.play()
 
 func play_final():
 	$Music.stream = final_music
-	#$Music.play()
+	$Music.play()
 	
 func sfx_key():
 	$Sfx.stream = key_sfx
-	#$Sfx.play()
+	$Sfx.play()
 	
 func sfx_jump():
 	$Sfx.stream = jump_sfx
-	#$Sfx.play()
+	$Sfx.play()
 	
 func sfx_clone():
 	$Sfx.stream = clone_sfx
-	#$Sfx.play()
+	$Sfx.play()
 	
 func sfx_fall():
 	$Sfx.stream = fall_sfx
-	#$Sfx.play()
+	$Sfx.play()
+
+
+
+	

@@ -16,4 +16,4 @@ func _input(event):
 
 func go_play():
 	MusicController.play_theme()
-	get_tree().change_scene("res://Levels/Level_0.tscn")
+	var _scene = get_tree().change_scene("res://Levels/Level_0.tscn")

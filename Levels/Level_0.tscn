@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Itens/CloneItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Itens/KeyItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Door/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=5]
-[ext_resource path="res://Assets/tileset16.tres" type="TileSet" id=6]
-[ext_resource path="res://Assets/tileset8.tres" type="TileSet" id=7]
+[ext_resource path="res://Assets/Tilesets/foreground/fg_tileset/tileset_fg_tileset.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/Tilesets/background/tileset_background.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/cage.png" type="Texture" id=8]
-[ext_resource path="res://Assets/keys/left.png" type="Texture" id=9]
-[ext_resource path="res://Assets/keys/arrow.png" type="Texture" id=10]
+[ext_resource path="res://Assets/keys/w.png" type="Texture" id=9]
+[ext_resource path="res://Assets/keys/d.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Fonts/m3x6.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://Assets/keys/space.png" type="Texture" id=12]
+[ext_resource path="res://Assets/keys/a.png" type="Texture" id=13]
+[ext_resource path="res://Assets/keys/s.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 11 )
@@ -24,20 +25,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -240.0
 margin_top = -176.0
-margin_right = 1248.0
+margin_right = 832.0
 margin_bottom = 288.0
 color = Color( 0.133333, 0.105882, 0.129412, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bg_green" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 56.0
-margin_right = 320.0
-margin_bottom = 120.0
-color = Color( 0.223529, 0.423529, 0.494118, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,63 +35,67 @@ __meta__ = {
 [node name="bg_green2" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 40.0
-margin_right = 968.0
-margin_bottom = 112.0
+margin_top = 16.0
+margin_right = 576.0
+margin_bottom = 113.0
 color = Color( 0.223529, 0.423529, 0.494118, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TileMap8" type="TileMap" parent="."]
+[node name="TileMap_BG" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
-cell_size = Vector2( 8, 8 )
-cell_quadrant_size = 8
+cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 393218, 0, 0, 393219, 1, 0, 393220, 2, 0, 393224, 16, 0, 393225, 11, 0, 393238, 0, 0, 393239, 1, 0, 393240, 2, 0, 393248, 14, 0, 393253, 6, 0, 393256, 0, 0, 393257, 1, 0, 393258, 2, 0, 393271, 16, 0, 393274, 0, 0, 393275, 1, 0, 393276, 2, 0, 393299, 0, 0, 393300, 1, 0, 393301, 2, 0, 393306, 11, 0, 393307, 16, 0, 393325, 0, 0, 393326, 1, 0, 393327, 2, 0, 393328, 11, 0, 393329, 16, 0, 458760, 16, 0, 458784, 14, 0, 458785, 11, 0, 458788, 10, 0, 458789, 6, 0, 458807, 16, 0, 458827, 18, 0, 458828, 19, 0, 458842, 11, 0, 458843, 16, 0, 458864, 11, 0, 458865, 16, 0, 524296, 16, 0, 524297, 11, 0, 524320, 13, 0, 524321, 12, 0, 524322, 12, 0, 524323, 12, 0, 524324, 12, 0, 524325, 7, 0, 524343, 16, 0, 524344, 11, 0, 524378, 11, 0, 524379, 16, 0, 524400, 11, 0, 524401, 16, 0, 589832, 16, 0, 589879, 16, 0, 589914, 11, 0, 589915, 16, 0, 589936, 11, 0, 589937, 16, 0, 589939, 18, 0, 589940, 19, 0, 655368, 16, 0, 655369, 11, 0, 655415, 16, 0, 655416, 11, 0, 655450, 11, 0, 655451, 16, 0, 655472, 11, 0, 655473, 16, 0, 720904, 16, 0, 720951, 16, 0, 720986, 11, 0, 720987, 16, 0, 721008, 11, 0, 721009, 16, 0, 786440, 16, 0, 786441, 11, 0, 786487, 16, 0, 786488, 11, 0, 851976, 16, 0, 852023, 16, 0 )
+tile_data = PoolIntArray( 131077, 9, 0, 131078, 13, 0, 131079, 17, 0, 131082, 21, 0, 131087, 9, 0, 131088, 13, 0, 131089, 17, 0, 131094, 1, 0, 131097, 7, 0, 131101, 9, 0, 131102, 13, 0, 131103, 17, 0, 196618, 21, 0, 196626, 15, 0, 196627, 14, 0, 196630, 2, 0, 196631, 5, 0, 196632, 5, 0, 196633, 8, 0, 262154, 21, 0, 327690, 21, 0, 327692, 19, 0, 327693, 19, 0, 327694, 19, 0, 327695, 19, 0, 327696, 19, 0, 327697, 19, 0, 327698, 19, 0, 327699, 19, 0, 327700, 19, 0, 327701, 19, 0, 327702, 19, 0, 327704, 19, 0, 327705, 19, 0, 327706, 19, 0, 327707, 19, 0, 327708, 19, 0, 327709, 19, 0, 327710, 19, 0, 327711, 19, 0, 327712, 19, 0, 327713, 19, 0, 327714, 19, 0, 327715, 19, 0, 393216, 19, 0, 393217, 19, 0, 393218, 19, 0, 393219, 19, 0, 393220, 19, 0, 393221, 19, 0, 393222, 19, 0, 393223, 19, 0, 393224, 19, 0, 393225, 19, 0, 393226, 22, 0, 393227, 19, 0 )
 
-[node name="TileMap16" type="TileMap" parent="."]
+[node name="TileMap_FG" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 131112, 1, 0, 131113, 1, 0, 131114, 1, 0, 131115, 1, 0, 131116, 1, 0, 131117, 1, 0, 131118, 1, 0, 131119, 1, 0, 131120, 1, 0, 131121, 1, 0, 131122, 1, 0, 131123, 1, 0, 131124, 1, 0, 131125, 1, 0, 131126, 1, 0, 131127, 1, 0, 131128, 1, 0, 131129, 1, 0, 131130, 1, 0, 131131, 1, 0, 131132, 1, 0, 262143, 1, 0, 196668, 1, 0, 327679, 1, 0, 262204, 1, 0, 393215, 1, 0, 327740, 1, 0, 458751, 1, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 0, 0, 393257, 0, 0, 393258, 0, 0, 393259, 0, 0, 393260, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0, 393264, 0, 0, 393265, 0, 0, 393266, 0, 0, 393267, 0, 0, 393268, 0, 0, 393269, 0, 0, 393270, 0, 0, 393271, 0, 0, 393272, 0, 0, 393273, 0, 0, 393274, 0, 0, 393275, 0, 0, 393276, 1, 0, 524287, 1, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 1, 0, 458782, 1, 0, 458783, 1, 0, 458784, 1, 0 )
+tile_data = PoolIntArray( 131071, 1, 131073, 65536, 1, 131073, 65537, 1, 131073, 65538, 1, 131073, 65539, 1, 131073, 65540, 1, 131073, 65541, 1, 131073, 65542, 1, 131073, 65543, 1, 131073, 65544, 1, 131073, 65545, 1, 131073, 65546, 1, 131073, 65547, 1, 131073, 65548, 1, 131073, 65549, 1, 131073, 65550, 1, 131073, 65551, 1, 131073, 65552, 1, 131073, 65553, 1, 131073, 65554, 1, 131073, 65555, 1, 131073, 65556, 1, 131073, 65557, 1, 131073, 65558, 1, 131073, 65559, 1, 131073, 65560, 1, 131073, 65561, 1, 131073, 65562, 1, 131073, 65563, 1, 131073, 65564, 1, 131073, 65565, 1, 131073, 65566, 1, 131073, 65567, 1, 131073, 65568, 1, 131073, 65569, 1, 131073, 65570, 1, 131073, 65571, 1, 131073, 65572, 1, 131073, 196607, 1, 131075, 131108, 1, 131075, 262143, 1, 131075, 196644, 1, 131075, 327679, 1, 131075, 262180, 1, 131075, 393215, 1, 131075, 327716, 1, 131075, 458751, 1, 131075, 393228, 1, 65536, 393229, 1, 65537, 393230, 1, 1, 393231, 1, 65537, 393232, 1, 65537, 393233, 1, 65537, 393234, 1, 65537, 393235, 1, 65537, 393236, 1, 65537, 393237, 1, 65537, 393238, 1, 65537, 393239, 1, 1, 393240, 1, 65537, 393241, 1, 65537, 393242, 1, 1, 393243, 1, 65537, 393244, 1, 65537, 393245, 1, 65537, 393246, 1, 65537, 393247, 1, 65537, 393248, 1, 65537, 393249, 1, 65537, 393250, 1, 65537, 393251, 1, 65537, 393252, 1, 196615, 524287, 1, 196612, 458752, 1, 65537, 458753, 1, 65537, 458754, 1, 65537, 458755, 1, 1, 458756, 1, 65537, 458757, 1, 1, 458758, 1, 65537, 458759, 1, 65537, 458760, 1, 65537, 458761, 1, 65537, 458762, 1, 65537, 458763, 1, 65541, 458764, 1, 262150, 458765, 1, 196609, 458766, 1, 196609, 458767, 1, 196609, 458768, 1, 196609, 458769, 1, 196609, 458770, 1, 196609, 458771, 1, 196609, 458772, 1, 196609, 458773, 1, 196609, 458774, 1, 196609, 458775, 1, 196609, 458776, 1, 196609, 458777, 1, 196609, 458778, 1, 196609, 458779, 1, 196609, 458780, 1, 196609, 458781, 1, 196609, 458782, 1, 196609, 458783, 1, 196609, 458784, 1, 196609, 458785, 1, 196609, 458786, 1, 196609, 458787, 1, 196609, 458788, 1, 196610, 589823, 1, 196608, 524288, 1, 196609, 524289, 1, 196609, 524290, 1, 196609, 524291, 1, 196609, 524292, 1, 196609, 524293, 1, 196609, 524294, 1, 196609, 524295, 1, 196609, 524296, 1, 196609, 524297, 1, 196609, 524298, 1, 196609, 524299, 1, 196610 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 704, 80 )
+position = Vector2( 368, 80 )
 
-[node name="Arrow" type="Sprite" parent="."]
+[node name="D" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 104, 96 )
+position = Vector2( 43.5, 74 )
 texture = ExtResource( 10 )
 
-[node name="Arrow2" type="Sprite" parent="."]
+[node name="A" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 88, 96 )
+position = Vector2( 21.5, 74 )
+texture = ExtResource( 13 )
+
+[node name="W" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.54902 )
+position = Vector2( 32.5, 63 )
 texture = ExtResource( 9 )
 
-[node name="Spacebar" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 285.5, 96 )
-texture = ExtResource( 12 )
+[node name="S" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.235294 )
+position = Vector2( 32.5, 74 )
+texture = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = 120.0
-margin_top = 88.0
-margin_right = 199.0
-margin_bottom = 102.0
+margin_left = 55.0
+margin_top = 65.0
+margin_right = 145.0
+margin_bottom = 79.0
 custom_fonts/font = SubResource( 1 )
-text = "Use arrow keys to move..."
+text = "- Movement and jump."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = 488.0
-margin_top = 72.0
-margin_right = 670.0
-margin_bottom = 86.0
+margin_left = 192.0
+margin_top = 74.0
+margin_right = 374.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 text = "Drink this ->      <- to clone yourself..."
 __meta__ = {
@@ -110,35 +104,21 @@ __meta__ = {
 
 [node name="Label4" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = 744.0
-margin_top = 72.0
-margin_right = 880.0
-margin_bottom = 86.0
+margin_left = 394.0
+margin_top = 74.0
+margin_right = 530.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 text = "...and take keys    to open doors."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = 333.5
-margin_top = 88.0
-margin_right = 466.5
-margin_bottom = 102.0
-custom_fonts/font = SubResource( 1 )
-text = "...and space bar to jump."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
-position = Vector2( 816, 80 )
-frame = 4
+position = Vector2( 457, 83 )
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 552, 80 )
-frame = 3
+position = Vector2( 256, 82 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 112 )

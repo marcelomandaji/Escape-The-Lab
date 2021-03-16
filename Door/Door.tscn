@@ -69,14 +69,16 @@ animations = [ {
 extents = Vector2( 8, 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 8, 0 )
 frames = SubResource( 12 )
 animation = "Idle"
+offset = Vector2( 8, 0 )
 script = ExtResource( 2 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, 4 )
+position = Vector2( 8, 4 )
 shape = SubResource( 13 )
 [connection signal="animation_finished" from="." to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

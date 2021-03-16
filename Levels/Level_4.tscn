@@ -1,20 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Itens/CloneItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Itens/KeyItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Door/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=5]
-[ext_resource path="res://Assets/tileset8.tres" type="TileSet" id=7]
-[ext_resource path="res://Assets/Fonts/m3x6.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Itens/OnOffDoor.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Itens/RedSwitch.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/keys/r.png" type="Texture" id=11]
-[ext_resource path="res://Assets/pc.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Tilesets/foreground/fg_tileset/tileset_fg_tileset.tres" type="TileSet" id=14]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 8 )
+[ext_resource path="res://Assets/Tilesets/background/tileset_background.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/Tilesets/foreground/fg_tileset/tileset_fg_tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://Itens/BlueSwitch.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Itens/RedSwitch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Itens/OnOffDoor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/pc.png" type="Texture" id=11]
 
 [node name="Level_4" type="Node2D"]
 script = ExtResource( 5 )
@@ -22,10 +18,10 @@ script = ExtResource( 5 )
 [node name="bg_black" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -184.0
-margin_top = -280.0
-margin_right = 577.0
-margin_bottom = 332.0
+margin_left = -224.0
+margin_top = -120.0
+margin_right = 537.0
+margin_bottom = 308.0
 color = Color( 0.133333, 0.105882, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,52 +30,57 @@ __meta__ = {
 [node name="bg_green" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 23.0
-margin_top = -96.0
-margin_right = 368.0
-margin_bottom = 204.0
+margin_left = 26.0
+margin_top = 112.0
+margin_right = 384.0
+margin_bottom = 195.0
 color = Color( 0.223529, 0.423529, 0.494118, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bg_green2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 272.0
+margin_top = 24.0
+margin_right = 384.0
+margin_bottom = 195.0
+color = Color( 0.223529, 0.423529, 0.494118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap_BG" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 131090, 21, 0, 131091, 20, 0, 131092, 20, 0, 131093, 20, 0, 131094, 20, 0, 131095, 20, 0, 196626, 21, 0, 262162, 21, 0, 262163, 18, 0, 262164, 10, 0, 262165, 19, 0, 262167, 19, 0, 327698, 21, 0, 393233, 19, 0, 393234, 22, 0, 393235, 19, 0, 458756, 9, 0, 458757, 13, 0, 458758, 17, 0, 458759, 21, 0, 524290, 20, 0, 524291, 20, 0, 524293, 18, 0, 524295, 21, 0, 655365, 15, 0, 655368, 10, 0, 655371, 14, 0, 655376, 21, 0, 655380, 19, 0, 720898, 19, 0, 720899, 19, 0, 720900, 19, 0, 720901, 19, 0, 720902, 19, 0, 720903, 19, 0, 720904, 19, 0, 720905, 19, 0, 720906, 19, 0, 720907, 19, 0, 720908, 19, 0, 720909, 19, 0, 720910, 19, 0, 720911, 19, 0, 720912, 22, 0, 720913, 19, 0, 720914, 19, 0, 720915, 19, 0 )
+
+[node name="TileMap_FG" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65552, 1, 131073, 65553, 1, 131073, 65554, 1, 131073, 65555, 1, 131073, 65556, 1, 131073, 65557, 1, 131073, 65558, 1, 131073, 65559, 1, 131073, 65560, 1, 131073, 131088, 1, 131075, 131096, 1, 131075, 196624, 1, 131075, 196632, 1, 131075, 262160, 1, 131075, 262168, 1, 131075, 327696, 1, 131075, 327701, 1, 65536, 327702, 1, 65537, 327703, 1, 65537, 327704, 1, 196615, 393217, 1, 131073, 393218, 1, 131073, 393219, 1, 131073, 393220, 1, 131073, 393221, 1, 131073, 393222, 1, 131073, 393223, 1, 131073, 393224, 1, 131073, 393225, 1, 131073, 393226, 1, 131073, 393227, 1, 131073, 393228, 1, 131073, 393229, 1, 131073, 393230, 1, 131073, 393231, 1, 131073, 393232, 1, 131074, 393237, 1, 131072, 393238, 1, 131073, 393239, 1, 131073, 393240, 1, 131074, 458753, 1, 131075, 458762, 1, 131072, 458763, 1, 131073, 458764, 1, 131073, 458765, 1, 131073, 458766, 1, 131073, 458767, 1, 131073, 458768, 1, 196613, 458769, 1, 1, 458770, 1, 65537, 458771, 1, 65538, 458773, 1, 131072, 458774, 1, 131073, 458775, 1, 131073, 458776, 1, 131074, 524289, 1, 131075, 524298, 1, 131072, 524299, 1, 131073, 524300, 1, 131073, 524301, 1, 131073, 524302, 1, 131073, 524303, 1, 131073, 524304, 1, 131073, 524305, 1, 131073, 524306, 1, 131077, 524307, 1, 196610, 524309, 1, 131072, 524310, 1, 131073, 524311, 1, 131073, 524312, 1, 131074, 589825, 1, 196612, 589826, 1, 65537, 589827, 1, 65537, 589828, 1, 65541, 589829, 1, 262145, 589830, 1, 262145, 589831, 1, 262145, 589832, 1, 262146, 589834, 1, 196608, 589835, 1, 196609, 589836, 1, 196609, 589837, 1, 196609, 589838, 1, 196609, 589839, 1, 196609, 589840, 1, 196609, 589841, 1, 196609, 589842, 1, 196610, 589845, 1, 131072, 589846, 1, 131073, 589847, 1, 131073, 589848, 1, 131074, 655361, 1, 131072, 655362, 1, 131073, 655363, 1, 131073, 655364, 1, 131074, 655381, 1, 131072, 655382, 1, 131073, 655383, 1, 131073, 655384, 1, 131074, 720897, 1, 131072, 720898, 1, 131073, 720899, 1, 131073, 720900, 1, 131074, 720916, 1, 65536, 720917, 1, 196614, 720918, 1, 131073, 720919, 1, 131073, 720920, 1, 131074, 786433, 1, 131072, 786434, 1, 131073, 786435, 1, 131073, 786436, 1, 196613, 786437, 1, 65537, 786438, 1, 65537, 786439, 1, 65538, 786440, 2, 0, 786441, 1, 65536, 786442, 1, 65538, 786443, 2, 0, 786444, 1, 65536, 786445, 1, 65537, 786446, 1, 65537, 786447, 1, 65537, 786448, 1, 65537, 786449, 1, 65537, 786450, 1, 65538, 786451, 2, 0, 786452, 1, 196608, 786453, 1, 196609, 786454, 1, 196609, 786455, 1, 196609, 786456, 1, 196610, 851969, 1, 196608, 851970, 1, 196609, 851971, 1, 196609, 851972, 1, 196609, 851973, 1, 196609, 851974, 1, 196609, 851975, 1, 196610, 851977, 1, 196608, 851978, 1, 196610, 851980, 1, 196608, 851981, 1, 196609, 851982, 1, 196609, 851983, 1, 196609, 851984, 1, 196609, 851985, 1, 196609, 851986, 1, 196610 )
+
 [node name="bg_black2" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 200.0
-margin_top = -32.0
-margin_right = 392.0
+margin_left = 176.0
+margin_top = 195.0
+margin_right = 192.0
 margin_bottom = 208.0
 color = Color( 0.133333, 0.105882, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TileMap8" type="TileMap" parent="."]
-position = Vector2( -16, 0 )
-tile_set = ExtResource( 7 )
-cell_size = Vector2( 8, 8 )
-cell_quadrant_size = 8
-format = 1
-tile_data = PoolIntArray( -655325, 10, 0, -524276, 11, 0, -524275, 11, 0, -524274, 11, 0, -524255, 18, 0, -524253, 10, 0, -458740, 17, 0, -458739, 17, 0, -458738, 17, 0, -458737, 17, 0, -458731, 3, 0, -458730, 4, 0, -458729, 5, 0, -393195, 13, 0, -393194, 12, 0, -393193, 7, 0, 12, 11, 0, 13, 11, 0, 14, 11, 0, 65548, 17, 0, 65549, 17, 0, 65550, 17, 0, 65551, 17, 0, 262168, 19, 0, 524300, 11, 0, 524301, 11, 0, 524302, 11, 0, 589836, 17, 0, 589837, 17, 0, 589838, 17, 0, 589839, 17, 0, 720920, 18, 0, 1048588, 11, 0, 1048589, 11, 0, 1048590, 11, 0, 1114124, 17, 0, 1114125, 17, 0, 1114126, 17, 0, 1114127, 17, 0, 1179672, 18, 0 )
-
-[node name="OnOffDoor2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 193, 16 )
-rotation = 1.5708
-scale = Vector2( 1, 1.08 )
-
-[node name="TileMap_FG" type="TileMap" parent="."]
-tile_set = ExtResource( 14 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( -458751, 1, 196609, -458750, 1, 196609, -458749, 1, 196609, -458748, 1, 196609, -458747, 1, 196609, -458746, 1, 196609, -458745, 1, 196609, -458744, 1, 196609, -458743, 1, 131073, -458742, 1, 196609, -458741, 1, 196609, -458740, 1, 196609, -458739, 1, 196609, -458738, 1, 196609, -458737, 1, 196609, -458736, 1, 196609, -458735, 1, 196609, -458734, 1, 196609, -458733, 1, 196609, -458732, 1, 196609, -458731, 1, 196609, -458730, 1, 196609, -458729, 1, 196609, -393215, 1, 131075, -393208, 1, 131075, -393193, 1, 131075, -327679, 1, 131075, -327672, 1, 131075, -327657, 1, 131075, -262143, 1, 196612, -262142, 2, 0, -262141, 1, 65537, -262140, 1, 65538, -262136, 1, 131075, -262126, 1, 65536, -262125, 1, 65537, -262124, 1, 65537, -262123, 1, 65537, -262122, 1, 1, -262121, 1, 196615, -196607, 1, 131072, -196606, 1, 131073, -196605, 1, 131073, -196604, 1, 131074, -196600, 1, 131075, -196596, 1, 65536, -196595, 1, 65537, -196594, 1, 1, -196593, 1, 65537, -196592, 1, 65537, -196591, 1, 1, -196590, 1, 196614, -196589, 1, 131077, -196588, 1, 196609, -196587, 1, 196609, -196586, 1, 196609, -196585, 1, 196610, -131071, 1, 131072, -131070, 1, 131073, -131069, 1, 131073, -131068, 1, 327685, -131067, 1, 262146, -131064, 1, 131075, -131060, 1, 131072, -131059, 1, 131077, -131058, 1, 196609, -131057, 1, 196609, -131056, 1, 196609, -131055, 1, 196609, -131054, 1, 196609, -131053, 1, 196610, -65535, 1, 131072, -65534, 1, 131073, -65533, 1, 131073, -65532, 1, 131074, -65528, 1, 131075, -65525, 1, 262144, -65524, 1, 327686, -65523, 1, 131074, 1, 1, 131072, 2, 1, 131073, 3, 1, 131073, 4, 1, 131074, 7, 1, 262144, 8, 1, 327687, 12, 1, 131072, 13, 1, 131074, 65537, 1, 131072, 65538, 1, 131073, 65539, 1, 131073, 65540, 1, 131074, 65544, 1, 327684, 65545, 1, 262146, 65548, 1, 131072, 65549, 1, 131074, 131073, 1, 131072, 131074, 1, 131073, 131075, 1, 131073, 131076, 1, 327685, 131077, 1, 262146, 131080, 1, 131075, 131084, 1, 131072, 131085, 1, 131074, 196609, 1, 131072, 196610, 1, 131073, 196611, 1, 131073, 196612, 1, 131074, 196616, 1, 131075, 196619, 1, 262144, 196620, 1, 327686, 196621, 1, 131074, 262145, 1, 131072, 262146, 1, 131073, 262147, 1, 131073, 262148, 1, 131074, 262151, 1, 262144, 262152, 1, 327687, 262156, 1, 131072, 262157, 1, 131074, 327681, 1, 131072, 327682, 1, 131073, 327683, 1, 131073, 327684, 1, 131074, 327688, 1, 327684, 327689, 1, 262146, 327692, 1, 131072, 327693, 1, 131074, 393217, 1, 131072, 393218, 1, 131073, 393219, 1, 131073, 393220, 1, 327685, 393221, 1, 262146, 393224, 1, 131075, 393228, 1, 131072, 393229, 1, 131074, 458753, 1, 131072, 458754, 1, 131073, 458755, 1, 131073, 458756, 1, 131074, 458760, 1, 131075, 458763, 1, 262144, 458764, 1, 327686, 458765, 1, 131074, 524289, 1, 131072, 524290, 1, 131073, 524291, 1, 131073, 524292, 1, 131074, 524295, 1, 262144, 524296, 1, 327687, 524300, 1, 131072, 524301, 1, 131074, 589825, 1, 131072, 589826, 1, 131073, 589827, 1, 131073, 589828, 1, 131074, 589832, 1, 262148, 589833, 1, 262146, 589836, 1, 131072, 589837, 1, 131074, 655361, 1, 131072, 655362, 1, 131073, 655363, 1, 131073, 655364, 1, 196613, 655365, 1, 65538, 655371, 1, 65536, 655372, 1, 196614, 655373, 1, 131074, 720897, 1, 131072, 720898, 1, 131073, 720899, 1, 131073, 720900, 1, 131073, 720901, 1, 131074, 720907, 1, 131072, 720908, 1, 131073, 720909, 1, 131074, 786433, 1, 196608, 786434, 1, 196609, 786435, 1, 196609, 786436, 1, 196609, 786437, 1, 262149, 786438, 1, 262145, 786439, 1, 262145, 786440, 1, 262145, 786441, 2, 0, 786442, 1, 262145, 786443, 1, 262150, 786444, 1, 196609, 786445, 1, 196610 )
-
 [node name="bg_black3" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 144.0
-margin_top = 195.0
-margin_right = 160.0
+margin_left = 304.0
+margin_top = 193.0
+margin_right = 320.0
 margin_bottom = 208.0
 color = Color( 0.133333, 0.105882, 0.129412, 1 )
 __meta__ = {
@@ -89,64 +90,58 @@ __meta__ = {
 [node name="bg_black4" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 32.0
-margin_top = -61.0
-margin_right = 48.0
-margin_bottom = -48.0
+margin_left = 128.0
+margin_top = 193.0
+margin_right = 144.0
+margin_bottom = 208.0
 color = Color( 0.133333, 0.105882, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 344, -80 )
-
-[node name="RedSwitch2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 32, -64 )
-animation = "Idle"
+position = Vector2( 352, 64 )
 
 [node name="KeyItem" parent="." instance=ExtResource( 3 )]
-position = Vector2( 32, -80 )
-frame = 2
-
-[node name="OnOffDoor" parent="." instance=ExtResource( 9 )]
-position = Vector2( 128, 160 )
-
-[node name="RedSwitch" parent="." instance=ExtResource( 10 )]
-position = Vector2( 144, 192 )
-animation = "Idle"
+position = Vector2( 38, 136 )
+frame = 1
 
 [node name="CloneItem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 176 )
-frame = 3
+position = Vector2( 112, 169 )
+
+[node name="OnOffDoor" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 88, 160 )
+
+[node name="OnOffDoor2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 224, 160 )
+
+[node name="BlueSwitch" parent="." instance=ExtResource( 8 )]
+position = Vector2( 128, 192 )
+animation = "Apertado"
+
+[node name="BlueSwitch2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 304, 192 )
+animation = "Apertado"
+
+[node name="RedSwitch" parent="." instance=ExtResource( 9 )]
+position = Vector2( 176, 192 )
+animation = "Idle"
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 80, 144 )
-texture = ExtResource( 12 )
-offset = Vector2( 8, 8 )
-
-[node name="Sprite8" type="Sprite" parent="."]
-position = Vector2( 236, -56 )
-texture = ExtResource( 12 )
-
-[node name="Label" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = 196.0
-margin_top = 176.0
-margin_right = 295.0
-margin_bottom = 190.0
-custom_fonts/font = SubResource( 1 )
-text = "- restart level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite9" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 186.5, 185 )
+position = Vector2( 288, 104 )
 texture = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 104, 192 )
-[connection signal="RedSwitch" from="RedSwitch2" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]
+position = Vector2( 152, 192 )
+[connection signal="BlueSwitch" from="BlueSwitch" to="BlueSwitch2" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch2" to="OnOffDoor2" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="BlueSwitch" from="BlueSwitch2" to="RedSwitch" method="_on_BlueSwitch_BlueSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch2" method="_on_RedSwitch_RedSwitch"]
 [connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor" method="_on_RedSwitch_RedSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="OnOffDoor2" method="_on_RedSwitch_RedSwitch"]
+[connection signal="RedSwitch" from="RedSwitch" to="BlueSwitch" method="_on_RedSwitch_RedSwitch"]
